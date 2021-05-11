@@ -5,39 +5,65 @@ import ClickableCell from "./ClickableCell";
 import "./CSS/Game.css";
 
 function Game() {
-  const [cell, setCell] = useState(false);
-  //   const [gridData, setGridData] = useState(false);
+  const [gridData, setGridData] = useState([]);
+  const [newValue, setNewValue] = useState("");
+  const [bonusCount, setBonusCount] = useState(0);
   const [gain, setGain] = useState();
   useEffect(() => {
-    setGain(1);
+    for (let x = 1; x <= 100; x += 1) {
+      setGridData((prevGridData) => [...prevGridData, { id: x, fill: null }]);
+    }
   }, []);
+
+  useEffect(() => {
+    setGain(5 + bonusCount);
+  }, [bonusCount]);
 
   return (
     <>
       <div className="gameboard">
-        <div className="grid-element">1</div>
-        <div className="grid-element">2</div>
-        <div className="grid-element" id="a">
-          3
-        </div>
-        <div className="grid-element" id="b">
-          <ClickableCell cell={cell} setCell={setCell} />
-        </div>
-        <div className="grid-element" id="c">
-          5
-        </div>
+        {gridData.map((element) => (
+          <ClickableCell
+            key={element.id}
+            fill={element.fill}
+            bonusCount={bonusCount}
+            setBonusCount={setBonusCount}
+            updateCell={() => {
+              setGridData(
+                gridData.map((cell) => {
+                  if (cell.id !== element.id) {
+                    return cell;
+                  }
+
+                  return { ...cell, fill: newValue };
+                })
+              );
+            }}
+          />
+        ))}
       </div>
+      <button
+        type="button"
+        className="button"
+        onClick={() => setNewValue("grass")}
+      >
+        Grass
+      </button>
+      <button
+        type="button"
+        className="button"
+        onClick={() => setNewValue("tree")}
+      >
+        Tree
+      </button>
+      <button
+        type="button"
+        className="button"
+        onClick={() => setNewValue("hive")}
+      >
+        Hive
+      </button>
       {gain && <Income gain={gain} />}
-      <button type="button" className="button" onClick={() => setGain(5)}>
-        {" "}
-        test x5
-      </button>
-      <button type="button" className="button" onClick={() => setGain(25)}>
-        test x25
-      </button>
-      <button type="button" className="button" onClick={() => setGain(500)}>
-        test x500
-      </button>
     </>
   );
 }
