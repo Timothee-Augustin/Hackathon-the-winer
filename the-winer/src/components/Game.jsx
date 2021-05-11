@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Income from "./Income";
+import ClickableCell from "./ClickableCell";
+// import FilledCell from "./FilledCell";
 import "./CSS/Game.css";
 
 function Game() {
+  const [cell, setCell] = useState(false);
+  //   const [gridData, setGridData] = useState(false);
   const [gain, setGain] = useState();
   useEffect(() => {
     setGain(1);
@@ -17,7 +21,7 @@ function Game() {
           3
         </div>
         <div className="grid-element" id="b">
-          4
+          <ClickableCell cell={cell} setCell={setCell} />
         </div>
         <div className="grid-element" id="c">
           5
