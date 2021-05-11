@@ -14,7 +14,14 @@ ul {
   justify-content: space-evenly;
   margin-top: 15px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  border-bottom: thick double rgb(180, 141, 41);
+
+}
+.logo {
+  max-width: 10%;
 }
 
 .current {
@@ -25,11 +32,12 @@ ul {
 .link {
   transition: font-size 0.4s;
   font-family: 'Bodoni Moda', serif;
-  color: rgb(180, 141, 41);
+  color: rgb(77, 8, 77);
+  padding-top: 2%;
 }
 
 .link:hover {
-  color: rgb(77, 8, 77);
+  color: rgb(180, 141, 41);
 }
 .link:active {
   color: darkolivegreen;
