@@ -6,7 +6,7 @@ function ClickableCell({ fill, updateCell, bonusCount, setBonusCount }) {
   let fillClass = "grid-element";
 
   if (fill === "grass") {
-    fillClass += " grassClass active";
+    fillClass += " grassClass ";
     useEffect(() => {
       setBonusCount(bonusCount + 10);
     }, []);

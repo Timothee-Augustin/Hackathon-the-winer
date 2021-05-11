@@ -9,19 +9,15 @@
     background-color: green;
 }
 
-.grassClass:active, .grassClass:focus {
+/* 
+#grid:hover:after{
     content: "\1F333";
-}
-
-.active {
-    content: "\1F333";
-}
+} */
 
 .treeClass {
-    background-image: \1F333;
+    background-image: url("https://s1.qwant.com/thumbr/0x380/a/8/65ccf337a710515f2a6c321b161894bce7bb380b454adfa398ed4f1c6ab290/tree-promo.jpg?u=http%3A%2F%2Fwww.takepart.com%2Fsites%2Fdefault%2Ffiles%2Ftree-promo.jpg&q=0&b=1&p=0&a=0");
     background-color: green;
 }
-
 
 .hiveClass {
     background-color: yellow;

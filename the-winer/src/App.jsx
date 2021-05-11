@@ -30,9 +30,6 @@ function App() {
           <Route exact path="/game" component={Game} />
         </Switch>
       </Router>
-      <div className="App">
-        <h1>Hello World !</h1>
-      </div>
     </>
   );
 }
