@@ -7,7 +7,7 @@ import "./CSS/Game.css";
 function Game() {
   const [gridData, setGridData] = useState([]);
   const [newValue, setNewValue] = useState("");
-  const [grassCount, setGrassCount] = useState(0);
+  const [bonusCount, setBonusCount] = useState(0);
   const [gain, setGain] = useState();
   useEffect(() => {
     for (let x = 1; x <= 100; x += 1) {
@@ -16,8 +16,8 @@ function Game() {
   }, []);
 
   useEffect(() => {
-    setGain(5 + grassCount * 10);
-  }, []);
+    setGain(5 + bonusCount);
+  }, [bonusCount]);
 
   return (
     <>
@@ -26,8 +26,8 @@ function Game() {
           <ClickableCell
             key={element.id}
             fill={element.fill}
-            grassCount={grassCount}
-            setGrassCount={setGrassCount}
+            bonusCount={bonusCount}
+            setBonusCount={setBonusCount}
             updateCell={() => {
               setGridData(
                 gridData.map((cell) => {
@@ -64,16 +64,6 @@ function Game() {
         Hive
       </button>
       {gain && <Income gain={gain} />}
-      <button type="button" className="button" onClick={() => setGain(5)}>
-        {" "}
-        test x5
-      </button>
-      <button type="button" className="button" onClick={() => setGain(25)}>
-        test x25
-      </button>
-      <button type="button" className="button" onClick={() => setGain(500)}>
-        test x500
-      </button>
     </>
   );
 }

@@ -2,20 +2,26 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./CSS/ClickableCell.css";
 
-function ClickableCell({ fill, updateCell, grassCount, setGrassCount }) {
+function ClickableCell({ fill, updateCell, bonusCount, setBonusCount }) {
   let fillClass = "grid-element";
 
   if (fill === "grass") {
     fillClass += " grassClass active";
     useEffect(() => {
-      setGrassCount(grassCount + 1);
+      setBonusCount(bonusCount + 10);
     }, []);
   }
   if (fill === "tree") {
     fillClass += " treeClass";
+    useEffect(() => {
+      setBonusCount(bonusCount + 150);
+    }, []);
   }
   if (fill === "hive") {
     fillClass += " hiveClass";
+    useEffect(() => {
+      setBonusCount(bonusCount + 25);
+    }, []);
   }
 
   return (
@@ -28,8 +34,8 @@ function ClickableCell({ fill, updateCell, grassCount, setGrassCount }) {
 ClickableCell.propTypes = {
   fill: PropTypes.string,
   updateCell: PropTypes.func.isRequired,
-  grassCount: PropTypes.number.isRequired,
-  setGrassCount: PropTypes.func.isRequired,
+  bonusCount: PropTypes.number.isRequired,
+  setBonusCount: PropTypes.func.isRequired,
 };
 
 ClickableCell.defaultProps = {
