@@ -6,20 +6,63 @@ import "./CSS/Game.css";
 
 function Game() {
   const [gridData, setGridData] = useState([]);
+  const [newValue, setNewValue] = useState("");
+  const [grassCount, setGrassCount] = useState(0);
   const [gain, setGain] = useState();
   useEffect(() => {
-    setGain(1);
-    setGridData([true, true, true, true, true, true, true]);
+    for (let x = 1; x <= 100; x += 1) {
+      setGridData((prevGridData) => [...prevGridData, { id: x, fill: null }]);
+    }
+  }, []);
+
+  useEffect(() => {
+    setGain(5 + grassCount * 10);
   }, []);
 
   return (
     <>
       <div className="gameboard">
-        {gridData.map(
-          (element) =>
-            element && <ClickableCell index={gridData.indexOf(element)} />
-        )}
+        {gridData.map((element) => (
+          <ClickableCell
+            key={element.id}
+            fill={element.fill}
+            grassCount={grassCount}
+            setGrassCount={setGrassCount}
+            updateCell={() => {
+              setGridData(
+                gridData.map((cell) => {
+                  if (cell.id !== element.id) {
+                    return cell;
+                  }
+
+                  return { ...cell, fill: newValue };
+                })
+              );
+            }}
+          />
+        ))}
       </div>
+      <button
+        type="button"
+        className="button"
+        onClick={() => setNewValue("grass")}
+      >
+        Grass
+      </button>
+      <button
+        type="button"
+        className="button"
+        onClick={() => setNewValue("tree")}
+      >
+        Tree
+      </button>
+      <button
+        type="button"
+        className="button"
+        onClick={() => setNewValue("hive")}
+      >
+        Hive
+      </button>
       {gain && <Income gain={gain} />}
       <button type="button" className="button" onClick={() => setGain(5)}>
         {" "}

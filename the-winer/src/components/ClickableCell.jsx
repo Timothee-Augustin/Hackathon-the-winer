@@ -1,33 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import "./CSS/Game.css";
+import "./CSS/ClickableCell.css";
 
-function ClickableCell({ index }) {
-  const [cell, setCell] = useState(false);
-  function fillCell() {
-    setCell(true);
+function ClickableCell({ fill, updateCell, grassCount, setGrassCount }) {
+  let fillClass = "grid-element";
+
+  if (fill === "grass") {
+    fillClass += " grassClass active";
+    useEffect(() => {
+      setGrassCount(grassCount + 1);
+    }, []);
   }
-  console.log(`cell n°${index}`);
-  if (cell === true) {
-    return <h1>Hello World</h1>;
+  if (fill === "tree") {
+    fillClass += " treeClass";
   }
+  if (fill === "hive") {
+    fillClass += " hiveClass";
+  }
+
   return (
-    <div
-      id="menfou"
-      className="grid-element"
-      type="button"
-      role="button"
-      tabIndex="-1"
-      onKeyDown={fillCell}
-      onClick={fillCell}
-    >
-      1{" "}
-    </div>
+    <button id="grid" className={fillClass} type="button" onClick={updateCell}>
+      {" "}
+    </button>
   );
 }
 
 ClickableCell.propTypes = {
-  index: PropTypes.number.isRequired,
+  fill: PropTypes.string,
+  updateCell: PropTypes.func.isRequired,
+  grassCount: PropTypes.number.isRequired,
+  setGrassCount: PropTypes.func.isRequired,
+};
+
+ClickableCell.defaultProps = {
+  fill: null,
 };
 
 export default ClickableCell;
