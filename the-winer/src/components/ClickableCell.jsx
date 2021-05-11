@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./CSS/Game.css";
 
-function ClickableCell({ setCell, cell }) {
+function ClickableCell({ index }) {
+  const [cell, setCell] = useState(false);
   function fillCell() {
     setCell(true);
   }
+  console.log(`cell n°${index}`);
   if (cell === true) {
     return <h1>Hello World</h1>;
   }
   return (
     <div
       id="menfou"
+      className="grid-element"
       type="button"
       role="button"
       tabIndex="-1"
@@ -24,8 +27,7 @@ function ClickableCell({ setCell, cell }) {
 }
 
 ClickableCell.propTypes = {
-  setCell: PropTypes.func.isRequired,
-  cell: PropTypes.bool.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default ClickableCell;
