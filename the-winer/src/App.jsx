@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   BrowserRouter as Router,
   NavLink,
@@ -7,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import Home from "./components/Home";
-
+import logo5 from "./components/assets/logo5.png";
 import Game from "./components/Game";
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App() {
           <NavLink activeClassName="current" className="link" exact to="/">
             Home
           </NavLink>
+          <img className="logo" src={logo5} alt="" />
           <NavLink activeClassName="current" className="link" exact to="/game">
             Game
           </NavLink>
