@@ -1,14 +1,27 @@
 .gameboard {
     display:grid;
-    grid-template-columns: repeat(10, minmax(100px ,1fr));
+    grid-template-columns: repeat(3, minmax(100px ,1fr));
     grid-template-rows: repeat(10, minmax(100px ,1fr));
     padding-bottom: 10px;
+    margin-bottom: 130px;
     /* min-width: 50rem;
     min-height: 10rem; */
 }
 
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+
+}
+
 .button {
-    display: inline-block;
+   
     padding: 15px 25px;
     font-size: 24px;
     cursor: pointer;
@@ -17,9 +30,10 @@
     outline: none;
     color: #fff;
     background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
+    border: 1px solid #1d4b1f;
+    
     box-shadow: 0 9px #999;
+    float: left;    
   }
   
   .button:hover {background-color: #3e8e41}
@@ -31,8 +45,8 @@
   }
 
   .rules {
-    margin-left: 20px;
-    margin-bottom: 35px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     color:rgb(88, 68, 16);
     background-color: whitesmoke;
     border-radius: 15%;
