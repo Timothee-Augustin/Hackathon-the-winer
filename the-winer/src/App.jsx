@@ -18,11 +18,11 @@ function App() {
       <Router>
         <ul>
           <NavLink activeClassName="current" className="link" exact to="/">
-            Home
+            Accueil
           </NavLink>
           <img className="logo" src={logo5} alt="" />
           <NavLink activeClassName="current" className="link" exact to="/game">
-            Game
+            Jouer
           </NavLink>
         </ul>
         <Switch>

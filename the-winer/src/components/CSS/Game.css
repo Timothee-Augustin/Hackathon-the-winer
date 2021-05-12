@@ -2,6 +2,7 @@
     display:grid;
     grid-template-columns: repeat(10, minmax(100px ,1fr));
     grid-template-rows: repeat(10, minmax(100px ,1fr));
+    padding-bottom: 10px;
     /* min-width: 50rem;
     min-height: 10rem; */
 }
@@ -27,4 +28,19 @@
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+
+  .rules {
+    margin-left: 20px;
+    margin-bottom: 35px;
+    color:rgb(88, 68, 16);
+    background-color: whitesmoke;
+    border-radius: 15%;
+    padding: 15px;
+    border:solid rgb(54, 6, 42);
+  }
+
+  .rules:hover{
+    color: white;
+    background-color: rgb(240, 201, 104);
   }
