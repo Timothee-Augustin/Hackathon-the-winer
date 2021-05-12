@@ -14,23 +14,21 @@ import "./App.css";
 
 function App() {
   return (
-    <>
-      <Router>
-        <ul>
-          <NavLink activeClassName="current" className="link" exact to="/">
-            Accueil
-          </NavLink>
-          <img className="logo" src={logo5} alt="" />
-          <NavLink activeClassName="current" className="link" exact to="/game">
-            Jouer
-          </NavLink>
-        </ul>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/game" component={Game} />
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <ul>
+        <NavLink activeClassName="current" className="link" exact to="/">
+          Accueil
+        </NavLink>
+        <img className="logo" src={logo5} alt="" />
+        <NavLink activeClassName="current" className="link" exact to="/game">
+          Jouer
+        </NavLink>
+      </ul>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/game" component={Game} />
+      </Switch>
+    </Router>
   );
 }
 
