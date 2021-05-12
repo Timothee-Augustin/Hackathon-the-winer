@@ -1,11 +1,10 @@
 .gameboard {
+
   display:grid;
   grid-template-columns: repeat(3, minmax(100px ,1fr));
   grid-template-rows: repeat(10, minmax(100px ,1fr));
   padding-bottom: 10px;
   margin-bottom: 130px;
-  /* min-width: 50rem;
-  min-height: 10rem; */
   position:relative;
 }
 .gameboard::after,.gameboard::before{
@@ -25,6 +24,7 @@
 
 .gameboard::before{
   left: 33%;
+
 }
 
 .footer{
