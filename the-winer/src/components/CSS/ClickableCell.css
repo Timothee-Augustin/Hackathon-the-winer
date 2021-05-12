@@ -1,5 +1,5 @@
 .grid-element {
-    background-image: url("../assets/vigne.png");
+    background-image: url("../assets/2.png");
     background-size: 100%;
     background-repeat: no-repeat;
     border: solid 1px rgb(1, 17, 9);
@@ -23,19 +23,19 @@
 
 .treeClass {
    background-position:center;
-    background-image: url("../assets/tree.png");
+    background-image: url("../assets/treebis.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-color: green;
+    background-color: rgb(156, 193, 228);
 
 }
 
 .hiveClass {
     background-position:center;
-    background-image: url("../assets/hive.png");
+    background-image: url("../assets/hive2.png");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-color: rgb(211, 125, 13);
+    background-color: rgb(156, 193, 228);
 }
 
 #a {
