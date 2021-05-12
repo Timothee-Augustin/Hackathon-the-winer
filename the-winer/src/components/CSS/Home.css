@@ -4,14 +4,12 @@ h1 {
     font-family: 'Cardo', serif;
     font-size: 1.5em;
     padding-bottom: 15px;
-    padding-top: 15px;
     color: rgb(13, 83, 6);;
 }
 
 p{
     font-family: 'Cardo', serif;
     padding-bottom: 15px;
-    text-indent: each-line 20px;
     font-size: 1.2em;
 }
 
@@ -24,4 +22,28 @@ p{
 .definitionContainer {
     margin:100px;
     box-shadow: 0 0 1em  rgb(0, 0, 0);
+}
+
+@media (max-width:960px) {
+   .definitionContainer { 
+       display: flex;
+       flex-direction: column;
+       align-content: center;
+        width :80%;
+        margin: 10%;
+    }
+    .homeImg {
+        width: 100%;
+    }
+
+    p {
+        padding-bottom: 5px;
+        font-size: 0.8em;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.1em;
+        text-decoration: underline 2px rgb(10, 107, 27);
+    }
+
 }

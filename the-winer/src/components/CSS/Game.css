@@ -4,6 +4,7 @@
     grid-template-rows: repeat(10, minmax(100px ,1fr));
     padding-bottom: 10px;
     margin-bottom: 130px;
+
     /* min-width: 50rem;
     min-height: 10rem; */
 }
