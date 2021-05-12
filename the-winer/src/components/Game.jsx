@@ -3,6 +3,7 @@ import Income from "./Income";
 import ClickableCell from "./ClickableCell";
 // import FilledCell from "./FilledCell";
 import "./CSS/Game.css";
+import vigneBis from "./assets/vigneBis.png";
 
 function Game() {
   const [gridData, setGridData] = useState([]);
@@ -10,7 +11,7 @@ function Game() {
   const [bonusCount, setBonusCount] = useState(0);
   const [gain, setGain] = useState();
   useEffect(() => {
-    for (let x = 1; x <= 100; x += 1) {
+    for (let x = 1; x <= 30; x += 1) {
       setGridData((prevGridData) => [...prevGridData, { id: x, fill: null }]);
     }
   }, []);
@@ -55,29 +56,32 @@ function Game() {
             }}
           />
         ))}
+        <img src={vigneBis} alt="vignes" width="100 px" heigh="100px" />
       </div>
-      <button
-        type="button"
-        className="button"
-        onClick={() => setNewValue("grass")}
-      >
-        Herbe
-      </button>
-      <button
-        type="button"
-        className="button"
-        onClick={() => setNewValue("tree")}
-      >
-        Arbres
-      </button>
-      <button
-        type="button"
-        className="button"
-        onClick={() => setNewValue("hive")}
-      >
-        Ruche
-      </button>
-      {gain && <Income gain={gain} />}
+      <footer className="footer">
+        <button
+          type="button"
+          className="button"
+          onClick={() => setNewValue("grass")}
+        >
+          Herbe
+        </button>
+        <button
+          type="button"
+          className="button"
+          onClick={() => setNewValue("tree")}
+        >
+          Arbres
+        </button>
+        <button
+          type="button"
+          className="button"
+          onClick={() => setNewValue("hive")}
+        >
+          Ruche
+        </button>
+        {gain && <Income gain={gain} />}
+      </footer>
     </>
   );
 }
