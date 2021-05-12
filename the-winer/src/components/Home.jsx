@@ -1,6 +1,6 @@
 import React from "react";
 import "./CSS/Home.css";
-import agro from "./assets/agroforesterie.png";
+import agro from "./assets/agroforesteriemobile.png";
 
 function Home() {
   return (
