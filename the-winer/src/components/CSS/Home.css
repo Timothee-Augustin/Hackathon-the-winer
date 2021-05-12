@@ -11,7 +11,8 @@ h1 {
 p{
     font-family: 'Cardo', serif;
     padding-bottom: 15px;
-    text-indent: 20px;
+    text-indent: each-line 20px;
+    font-size: 1.2em;
 }
 
 .homeImg {

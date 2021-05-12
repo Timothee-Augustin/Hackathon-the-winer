@@ -21,6 +21,20 @@ function Game() {
 
   return (
     <>
+      <div>
+        <button
+          className="rules"
+          type="button"
+          onClick={() => {
+            alert(
+              "Règles du jeu :\n Vous devez compléter le jeu pour gagner une place à une dégustation de champagne. Vous serez amené en début de partie à traiter les vignes de manière chimique, cependant vous constaterez que cela coûte cher et que l'agroforestation est plus avantageuse pour votre budget ainsi que pour la planète.\n Vous débloquerez des éléments vous permettant de la pratiquer en passant des niveaux. Ce sera à vous de choisir de manière stratégique ce que vous souhaitez faire pour augmenter le rendement des vignes déjà présentes."
+            );
+          }}
+        >
+          Règles
+        </button>
+      </div>
+
       <div className="gameboard">
         {gridData.map((element) => (
           <ClickableCell
@@ -47,21 +61,21 @@ function Game() {
         className="button"
         onClick={() => setNewValue("grass")}
       >
-        Grass
+        Herbe
       </button>
       <button
         type="button"
         className="button"
         onClick={() => setNewValue("tree")}
       >
-        Tree
+        Arbres
       </button>
       <button
         type="button"
         className="button"
         onClick={() => setNewValue("hive")}
       >
-        Hive
+        Ruche
       </button>
       {gain && <Income gain={gain} />}
     </>

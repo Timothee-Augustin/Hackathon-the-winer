@@ -25,9 +25,16 @@ function ClickableCell({ fill, updateCell, bonusCount, setBonusCount }) {
   }
 
   return (
-    <button id="grid" className={fillClass} type="button" onClick={updateCell}>
-      {" "}
-    </button>
+    <>
+      <button
+        id="grid"
+        className={fillClass}
+        type="button"
+        onClick={updateCell}
+      >
+        {" "}
+      </button>
+    </>
   );
 }
 

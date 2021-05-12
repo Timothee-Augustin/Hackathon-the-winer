@@ -1,12 +1,20 @@
 .grid-element {
-    border: solid 3px black;
+    background-position:center;
+    background-image: url("../assets/2.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: solid 1px rgb(1, 17, 9);
     padding: 0;
     margin: 0;
-    background-color: brown;
+    background-color: #573636;
 }
 
 .grassClass {
-    background-color: green;
+    background-position:center;
+    background-image: url("../assets/grass.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(156, 193, 228);
 }
 
 /* 
@@ -15,12 +23,20 @@
 } */
 
 .treeClass {
-    background-image: url("https://s1.qwant.com/thumbr/0x380/a/8/65ccf337a710515f2a6c321b161894bce7bb380b454adfa398ed4f1c6ab290/tree-promo.jpg?u=http%3A%2F%2Fwww.takepart.com%2Fsites%2Fdefault%2Ffiles%2Ftree-promo.jpg&q=0&b=1&p=0&a=0");
+   background-position:center;
+    background-image: url("../assets/tree.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
     background-color: green;
+
 }
 
 .hiveClass {
-    background-color: yellow;
+    background-position:center;
+    background-image: url("../assets/hive.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(211, 125, 13);
 }
 
 #a {
