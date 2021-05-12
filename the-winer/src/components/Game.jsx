@@ -3,6 +3,7 @@ import Income from "./Income";
 import ClickableCell from "./ClickableCell";
 // import FilledCell from "./FilledCell";
 import "./CSS/Game.css";
+import vigneBis from "./assets/vigneBis.png";
 
 function Game() {
   const [gridData, setGridData] = useState([]);
@@ -55,6 +56,7 @@ function Game() {
             }}
           />
         ))}
+        <img src={vigneBis} alt="vignes" width="100 px" heigh="100px" />
       </div>
       <footer className="footer">
         <button
